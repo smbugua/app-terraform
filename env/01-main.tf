@@ -30,13 +30,13 @@ provider "google-beta" {
     region = var.primary_region  
 }
 #to provision our gcp resources 
- module "gcp" {
-   env = var.env
-   source = "../modules/gcp-compute"
-   prefix = var.prefix
-   gcp_project_id = var.gcp_project_id
-   gke_machine_type = var.gke_machine_type
-   primary_region = var.primary_region
-   min_gke_master_version = var.min_gke_master_version
-   gke_type = var.gke_type
- }
+#  module "gcp" {
+#    env = var.env
+#    source = "../modules/gcp-compute"
+#    prefix = var.prefix
+#    gcp_project_id = var.gcp_project_id
+#    gke_machine_type = var.gke_machine_type
+#    primary_region = var.primary_region
+#    min_gke_master_version = var.min_gke_master_version
+#    gke_type = var.gke_type
+#  }

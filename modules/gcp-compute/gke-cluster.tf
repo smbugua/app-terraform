@@ -8,7 +8,7 @@ resource "google_container_cluster" "primary-private" {
   subnetwork  = google_compute_subnetwork.primary.self_link
   
   min_master_version = var.min_gke_master_version
-  initial_node_count       = 3
+  initial_node_count       = 1
   remove_default_node_pool = true
 
   master_auth {

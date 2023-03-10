@@ -3,7 +3,10 @@ resource "google_container_cluster" "primary-private" {
   provider    = google-beta
   location    = var.primary_region
   name        = var.prefix
-  network     = var.network_name
+
+   network     = google_compute_network.primary.self_link
+  subnetwork  = google_compute_subnetwork.primary.self_link
+  
   min_master_version = var.min_gke_master_version
   initial_node_count       = 3
   remove_default_node_pool = true
@@ -28,9 +31,9 @@ resource "google_container_node_pool" "primary-private-0" {
   count      = length(google_container_cluster.primary-private)
   provider   = google-beta
   location   = var.primary_region
-  name       = var.node_pool_name
+  name       = "${var.prefix}-node-pool-0"
   cluster    = google_container_cluster.primary-private[0].name
-  node_count = 3
+  node_count = 1
   version    = var.min_gke_master_version
 
   timeouts {

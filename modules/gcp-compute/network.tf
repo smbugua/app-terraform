@@ -1,13 +1,13 @@
 resource "google_compute_network" "primary" {
   provider = google-beta
-  name = "app-network"
+  name = "${var.prefix}-primary"
   auto_create_subnetworks = false
 }
 
 resource "google_compute_subnetwork" "primary" {
   provider         = google-beta
-  name             = "app-subnet"
-  ip_cidr_range    = "10.10.0.0/16"
+  name             = "${var.prefix}-primary"
+  ip_cidr_range    = "10.100.0.0/20"
   region           = var.primary_region
   network          = google_compute_network.primary.self_link
 
@@ -19,7 +19,7 @@ resource "google_compute_subnetwork" "primary" {
     metadata             = "INCLUDE_ALL_METADATA"
   }
 }
-#Reserving a static internal IP address
+
 resource "google_compute_global_address" "google-managed-services" {
   name          = "${var.prefix}-google-managed-services"
   purpose       = "VPC_PEERING"
@@ -28,8 +28,6 @@ resource "google_compute_global_address" "google-managed-services" {
   network       = google_compute_network.primary.self_link
 }
 
-#create a private connection to a service producer in this case google 
-# service networking
 resource "google_service_networking_connection" "servicenetworking" {
   network                 = google_compute_network.primary.self_link
   service                 = "servicenetworking.googleapis.com"

@@ -38,4 +38,5 @@ provider "google-beta" {
    gke_machine_type = var.gke_machine_type
    primary_region = var.primary_region
    min_gke_master_version = var.min_gke_master_version
+   gke_type = var.gke_type
  }

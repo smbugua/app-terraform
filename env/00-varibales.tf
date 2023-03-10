@@ -16,9 +16,17 @@ variable "primary_region" {
 }
 variable "gke_machine_type" {
   type = string
-  default = "e2-standard-4"
+  default = "t2a-standard-1"
 }
 variable "min_gke_master_version" {
   type = string
   default = "1.24.8-gke.2000"
+}
+variable "prefix" {
+  type = string
+  default = "app"
+}
+variable "gke_type" {
+  type = string
+  default = "public"
 }

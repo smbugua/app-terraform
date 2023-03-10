@@ -36,7 +36,6 @@ provider "google-beta" {
    prefix = var.prefix
    gcp_project_id = var.gcp_project_id
    gke_machine_type = var.gke_machine_type
-   db_password = var.db_password
    primary_region = var.primary_region
    min_gke_master_version = var.min_gke_master_version
  }

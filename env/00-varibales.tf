@@ -22,3 +22,7 @@ variable "min_gke_master_version" {
   type = string
   default = "1.24.8-gke.2000"
 }
+variable "prefix" {
+  type = string
+  default = "app"
+}

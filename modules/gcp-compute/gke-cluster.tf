@@ -18,7 +18,8 @@ resource "google_container_cluster" "primary-private" {
   }
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block = var.cluster_ipv4_cicdr_block
+      cidr_block = "0.0.0.0/0"
+      display_name = "Public"
     }
   }
 

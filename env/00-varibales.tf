@@ -26,3 +26,7 @@ variable "prefix" {
   type = string
   default = "app"
 }
+variable "gke_type" {
+  type = string
+  default = "public"
+}

@@ -1,9 +1,9 @@
 terraform {
   backend "remote"{
     hostname = "app.terraform.io"
-    organization = "nebula_io"
+    organization = "<TF-CLOUD-ORG>"
     workspaces {
-      name = "app-test"
+      name = "<TF-CLOUD-WORKSPACE>"
     }
   }
     required_providers {

@@ -3,11 +3,11 @@ variable "GCP_JSON_KEY" {
   default = ""
 }
 variable "gcp_project_id" {
-  default = "galleria-370207"
+  default = "<ENTER-GOOGLE-PROJECT-ID>"
 }
 variable "env" {
   type = string
-  default = "terraform-test"
+  default = "<ENTER-ENV-NAME>"
 }
 
 variable "primary_region" {

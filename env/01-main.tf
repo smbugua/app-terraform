@@ -28,6 +28,9 @@ provider "google-beta" {
     credentials = var.GCP_JSON_KEY
     project = var.gcp_project_id
     region = var.primary_region  
+    psql_db = var.psql_db
+    psql_user = var.psql_user
+    postgres_instance_name = var.postgres_instance_name
 }
 #to provision our gcp resources 
 #  module "gcp" {

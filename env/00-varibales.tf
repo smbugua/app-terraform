@@ -30,3 +30,14 @@ variable "gke_type" {
   type = string
   default = "public"
 }
+variable "psql_db" {
+  default= "<configurre db name>"
+}
+
+variable "psql_user" {
+  default= "<configurre db username>"
+}
+
+variable "postgres_instance_name" {
+  default= "<configurre db instance name>"
+}
